@@ -1,3 +1,9 @@
+{% extends "polls/base.html" %}
+
+{% block title %}Detalhes da Enquete{% endblock title %}
+
+{% block content %}
+
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -5,3 +11,4 @@
     <li>{{choice.choice_text}}</li>
 {% endfor %}
 </ul>
+{% endblock %}
