@@ -26,4 +26,5 @@ from django.urls import reverse_lazy
 
 class QuestionCreateView(CreateView):
     model = Question
-    sucess_url: reverse_lazy('index')
+    fields = ('question_text', 'pub_date')
+    sucess_url =  reverse_lazy('index')
