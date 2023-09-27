@@ -4,7 +4,7 @@ from accounts import views
 
 urlpatterns = [
     path(
-        'cadastro/signup',
+        'accounts/signup',
         views.AccountsCreateView.as_view(),
         name="signup"
         )
