@@ -26,18 +26,20 @@
                           <a class="p-2 text-dark" href="{% url 'account_edit' pk=user.pk %}">Minha conta</a>
 
                         {% else %}
-                            <li><a href="{% url "signup" %}">Cadastrar</a></li>
-                            <li><a href="{% url "login" %}">Login</a></li>
+                            <li style="list-style: none;"><a href="{% url "signup" %}">Cadastrar</a></li>
+                            <li style="list-style: none;"><a href="{% url "login" %}">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
             </div>
 
+     <p>
         <div class="row">
             <div class="col">
           <img src="{% static 'polls/img/zyro-image.png' %}" width = 1000px>
             </div>
         </div>
+    </p>
 
          </header>
 
@@ -48,7 +50,9 @@
 
         {% block content %}{% endblock content %}
     </main>
+    <p>
     <footer>Rodapé</footer>
+    </p>
 
     </div>
     
