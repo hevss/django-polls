@@ -35,16 +35,16 @@ class AccountUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('question-list')
     success_message = 'Perfil atualizado com sucesso!'
 
-def get_queryset(self):
-    user_id = self.kwargs.get('pk')
-    user = self.request.user
-    if user is None or not user.is_authenticated or user_id != user.id:
-        return User.objects.none()
-    return User.objects.filter(id=user.id)
+    def get_queryset(self):
+        user_id = self.kwargs.get('pk')
+        user = self.request.user
+        if user is None or not user.is_authenticated or user_id != user.id:
+            return User.objects.none()
+        return User.objects.filter(id=user.id)
 
-def form_valid(self, form):
-    messages.success(self.request, self.success_message)
-    return super(AccountUpdateView, self).form_valid(form)
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super(AccountUpdateView, self).form_valid(form)
 
     
 
